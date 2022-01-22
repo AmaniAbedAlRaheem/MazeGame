@@ -24,12 +24,12 @@ function StartGame()
     for (var i = 0 ; i<boundaries.length ; i++)
 
     {   
-        boundaries[i].style.backgroundColor ="red";
+        boundaries[i].style.backgroundColor ="#eeeeee";
         if (boundaries[i].style.backgroundColor !="red")
 
         {
 
-            var  stat = document.getElementById("status").innerHTML  = "Begin by moving your mouse over the 'S'.";
+            var  stat = document.getElementById("status").innerHTML  = 'Begin by moving your mouse over the "S".';
             
 
         }
