@@ -1,23 +1,35 @@
 document.addEventListener("DOMContentLoaded", function (event) 
-{
+{   
+
+    var playerscore = document.getElementsByClassName("example")[0];
+
+    
+    
 
     document.getElementById("start").addEventListener("click", function () {
+   
         StartGame();
+   
 
     });
 
     //onmouseover : not working , re-check
     document.getElementById("end").addEventListener("mouseover", function () {
         ReachedEnd();
+
+     
+
+
     });
 
 
     var boundaries = document.querySelectorAll(".boundary");
     for (var i=0 ; i <boundaries.length; i++){
+        
         boundaries[i].onmouseover = Boundaries;
+   
+
     }
-
-
 
     
     
@@ -28,13 +40,16 @@ document.addEventListener("DOMContentLoaded", function (event)
 function StartGame() {
 
 
+   
     //In order to loop on all the boundary divs
     var boundaries = document.getElementsByClassName("boundary");
+
 
     for (var i = 0; i < boundaries.length; i++)
 
     {
         boundaries[i].style.backgroundColor = "#eeeeee";
+        score();
 
         if (boundaries[i].style.backgroundColor != "red")
 
@@ -56,6 +71,8 @@ function StartGame() {
 
 function ReachedEnd() {
 
+
+
     var boundaries = document.getElementsByClassName("boundary");
     
 
@@ -64,6 +81,9 @@ function ReachedEnd() {
         if (boundaries[i].style.backgroundColor != "red") {
 
             var state = document.getElementById('status').innerHTML = " You Won ";
+            score();
+            
+        
         }
     }
 }
@@ -84,6 +104,11 @@ function Boundaries(){
         {
 
             var state = document.getElementById('status').innerHTML = "You Lost";
+            
+            
+            
         }
     }
 }
+
+
