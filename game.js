@@ -29,7 +29,7 @@ function StartGame()
 
         {
 
-            var  stat = document.getElementById("status").innerHTML  = 'Begin by moving your mouse over the "S".';
+            var  state = document.getElementById("status").innerHTML  = 'Begin by moving your mouse over the "S".';
             
 
         }
@@ -42,6 +42,19 @@ function StartGame()
  }
 
 
+
+
+ function ReachedEnd(){
+     var boundaries = document.getElementsByClassName("boundary");
+     for (var i=0; i< boundaries.length; i++){
+         if (boundaries[i]!="red"){
+             var state = document.getElementById('status').innerHTML = " You Won ";
+         }
+     }
+ }
+
+
+ 
 
 
 
