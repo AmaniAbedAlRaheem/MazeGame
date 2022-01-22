@@ -1,65 +1,89 @@
-document.addEventListener("DOMContentLoaded", function(event){
+document.addEventListener("DOMContentLoaded", function (event) 
+{
 
-    document.getElementById("start").addEventListener("click",function(){
+    document.getElementById("start").addEventListener("click", function () {
         StartGame();
 
     });
 
-
-    document.getElementById("end").addEventListener('onmouseover',function(){
-        EndGame();
+    //onmouseover : not working , re-check
+    document.getElementById("end").addEventListener("mouseover", function () {
+        ReachedEnd();
     });
 
+
+    var boundaries = document.querySelectorAll(".boundary");
+    for (var i=0 ; i <boundaries.length; i++){
+        boundaries[i].onmouseover = Boundaries;
+    }
+
+
+
+    
+    
 
 });
 
 
-function StartGame()
-{
+function StartGame() {
 
 
     //In order to loop on all the boundary divs
     var boundaries = document.getElementsByClassName("boundary");
 
-    for (var i = 0 ; i<boundaries.length ; i++)
+    for (var i = 0; i < boundaries.length; i++)
 
-    {   
-        boundaries[i].style.backgroundColor ="#eeeeee";
-        if (boundaries[i].style.backgroundColor !="red")
+    {
+        boundaries[i].style.backgroundColor = "#eeeeee";
+
+        if (boundaries[i].style.backgroundColor != "red")
 
         {
 
-            var  state = document.getElementById("status").innerHTML  = 'Begin by moving your mouse over the "S".';
-            
+            var state = document.getElementById("status").innerHTML = 'Begin by moving your mouse over the "S".';
+
 
         }
-       
+
 
     }
 
- 
 
- }
-
+}
 
 
 
- function ReachedEnd(){
-     var boundaries = document.getElementsByClassName("boundary");
-     for (var i=0; i< boundaries.length; i++){
-         if (boundaries[i]!="red"){
-             var state = document.getElementById('status').innerHTML = " You Won ";
-         }
-     }
- }
 
+function ReachedEnd() {
 
- 
-
-
-
+    var boundaries = document.getElementsByClassName("boundary");
     
 
+    for (var i = 0; i < boundaries.length; i++) {
+
+        if (boundaries[i].style.backgroundColor != "red") {
+
+            var state = document.getElementById('status').innerHTML = " You Won ";
+        }
+    }
+}
 
 
 
+
+function Boundaries(){
+    
+
+    var boundaries = document.getElementsByClassName("boundary");
+
+    for (var i=0; i<boundaries.length; i++){
+
+        boundaries[i].style.backgroundColor = "red";
+
+        if(boundaries[i].style.backgroundColor =="red")
+        {
+
+            var state = document.getElementById('status').innerHTML = "You Lost";
+        }
+    }
+}
