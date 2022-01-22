@@ -29,7 +29,7 @@ function StartGame()
 
         {
 
-            var  stat = document.getElementById("status").innerHTML  = "Begin by moving your mouse over the 'S'";
+            var  stat = document.getElementById("status").innerHTML  = "Testing";
 
         }
        
