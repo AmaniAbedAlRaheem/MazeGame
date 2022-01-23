@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function (event)
 
     });
 
-    //onmouseover : not working , re-check
     document.getElementById("end").addEventListener("mouseover", function () {
         ReachedEnd();
 
