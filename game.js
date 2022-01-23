@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", function (event) 
 {   
 
-    var playerscore = document.getElementsByClassName("example")[0];
 
-    
-    
+  
 
     document.getElementById("start").addEventListener("click", function () {
    
@@ -40,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function (event)
 function StartGame() {
 
 
-   
+    document.getElementsByClassName("example")[0].innerHTML =0;
     //In order to loop on all the boundary divs
     var boundaries = document.getElementsByClassName("boundary");
 
@@ -49,12 +47,13 @@ function StartGame() {
 
     {
         boundaries[i].style.backgroundColor = "#eeeeee";
-        score();
 
+
+      
         if (boundaries[i].style.backgroundColor != "red")
 
         {
-
+           
             var state = document.getElementById("status").innerHTML = 'Begin by moving your mouse over the "S".';
 
 
@@ -71,17 +70,21 @@ function StartGame() {
 
 function ReachedEnd() {
 
-
-
+    var score = 0;
+ 
     var boundaries = document.getElementsByClassName("boundary");
-    
+  
+
 
     for (var i = 0; i < boundaries.length; i++) {
+
+
 
         if (boundaries[i].style.backgroundColor != "red") {
 
             var state = document.getElementById('status').innerHTML = " You Won ";
-            score();
+            document.getElementsByClassName("example")[0].innerHTML =  score +5;
+            
             
         
         }
@@ -95,10 +98,12 @@ function Boundaries(){
     
 
     var boundaries = document.getElementsByClassName("boundary");
-
+  
     for (var i=0; i<boundaries.length; i++){
 
         boundaries[i].style.backgroundColor = "red";
+        
+      
 
         if(boundaries[i].style.backgroundColor =="red")
         {
@@ -107,8 +112,8 @@ function Boundaries(){
             
             
             
+            
         }
     }
 }
-
 
