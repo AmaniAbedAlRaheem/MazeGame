@@ -70,9 +70,11 @@ function ReachedEnd() {
 }
 
 function Boundaries() {
-
  
-
+    if (score != 0){
+        score -= 10;
+        document.getElementsByClassName("example")[0].innerHTML = score;
+    }
     var boundaries = document.getElementsByClassName("boundary");
 
     for (var i = 0; i < boundaries.length; i++) {
