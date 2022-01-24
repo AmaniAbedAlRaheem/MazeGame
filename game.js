@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function (event) {
 
+
+    var score = 0;
+
     document.getElementById("start").addEventListener("click", function () {
 
         StartGame();
@@ -24,8 +27,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 function StartGame() {
 
 
-    document.getElementsByClassName("example")[0].innerHTML = 0;
-    //In order to loop on all the boundary divs
+    score = 0;
+    document.getElementsByClassName("example")[0].innerHTML = score;
+    
     var boundaries = document.getElementsByClassName("boundary");
 
 
@@ -48,9 +52,9 @@ function StartGame() {
 
 function ReachedEnd() {
 
-    var score = 0;
 
-    var boundaries = document.getElementsByClassName("boundary");
+    score += 5;
+    document.getElementsByClassName("example")[0].innerHTML = score;
 
     for (var i = 0; i < boundaries.length; i++) {
 
@@ -64,6 +68,9 @@ function ReachedEnd() {
 }
 
 function Boundaries() {
+
+    score -=10;
+    document.getElementsByClassName("example").innerHTML = score;
 
     var boundaries = document.getElementsByClassName("boundary");
 
