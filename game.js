@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) {
 
-
     var score = 0;
 
     document.getElementById("start").addEventListener("click", function () {
@@ -23,13 +22,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 });
 
+//Score is calculated in the div of class "example"
+
 
 function StartGame() {
 
 
     score = 0;
     document.getElementsByClassName("example")[0].innerHTML = score;
-    
+
     var boundaries = document.getElementsByClassName("boundary");
 
 
@@ -69,8 +70,10 @@ function ReachedEnd() {
 
 function Boundaries() {
 
-    score -=10;
+    if (score != 0){
+    score -= 10;
     document.getElementsByClassName("example")[0].innerHTML = score;
+    }
 
     var boundaries = document.getElementsByClassName("boundary");
 
