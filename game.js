@@ -22,8 +22,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 });
 
-//Score is calculated in the div of class "example"
 
+
+//Note: Score is calculated in the div of class ="example"
 
 function StartGame() {
 
