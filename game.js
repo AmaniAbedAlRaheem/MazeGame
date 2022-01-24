@@ -70,7 +70,7 @@ function ReachedEnd() {
 function Boundaries() {
 
     score -=10;
-    document.getElementsByClassName("example").innerHTML = score;
+    document.getElementsByClassName("example")[0].innerHTML = score;
 
     var boundaries = document.getElementsByClassName("boundary");
 
